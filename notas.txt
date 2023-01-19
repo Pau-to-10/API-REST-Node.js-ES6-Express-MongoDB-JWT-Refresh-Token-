@@ -1,0 +1,22 @@
+# NOTAS /package.json:
+    - "type": "module" --> para usar import/export (ES6 y superior) en vez de require/module.require. Si se usa uno no se puede usar el otro.
+
+    - Dependencias:
+        - Express: npm i express --> framework para levantar nuestro servidor sin tener que hacer peticiones HTTP Requests.
+        - Nodemon: npm i -D nodemon --> para estar refrescando nuestro servidor cada vez que hacemos un cambio. Le ponemos el -D para que sea una dependencia de desarrollo y cuando lo subamos a producción no se instalará.
+        - Express-validator: npm i express-validator --> para validar todas las solicitudes que hará el cliente.
+        - Mongoose: npm i mongoose --> es un ODM que nos va a servir para hacer todas las consultas a la base de datos.
+        - Jsonwebtoken: npm i jsonwebtoken --> generar tokens de seguridad para que el frontend de alguna forma gestione ese token y lo pueda enviar por cada solicitud y nosotros sepamos que ese usuario está autenticado en nuestra aplicación y está autorizado para realizar ciertas solicitudes.
+        - Dotenv: npm i dotenv --> para trabajar con variables de entorno. Meter en variables de entorno info sensible.
+        - Cors: npm i cors --> sirven para configurar que un servidor (backend) y otro servidor (frontend) se comuniquen correctamente.
+        - Bcrypt: npm i bcrypt --> para hashear la contraseña.
+        - Cookie-parser: npm i cookie-parser --> para trabajar con JWT. Para no usar cookies navegador ni localstorage. Generar cookie que no será accesible en el frontend.
+
+
+
+# NOTAS archivos:
+    - .gitignore: para poner todo lo que no queremos que se le haga un seguimiento.
+    - .env: variables de entorno que tengan info delicada.
+
+# NOTAS generales:
+    - Una API REST por definición no puede guardar sesiones de usuario en el servidor.
