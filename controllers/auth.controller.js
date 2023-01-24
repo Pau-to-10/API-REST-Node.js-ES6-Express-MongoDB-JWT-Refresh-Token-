@@ -1,5 +1,13 @@
+import { validationResult } from "express-validator";
+
 export const register = (req, res) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   console.log(req.body); //para poder leer las solicitudes en JSON, necesitamos poner en index.js: app.use(express.json()).
+
   res.json({ ok: "register" });
 };
 
